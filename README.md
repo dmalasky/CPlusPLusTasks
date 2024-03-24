@@ -11,7 +11,7 @@ Functions
 Classes
 Data Structures
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/fMlSC9kc4Y8)
 
 # Development Environment
 

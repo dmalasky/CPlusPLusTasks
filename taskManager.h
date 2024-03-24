@@ -23,6 +23,8 @@ public:
 	void remove_task(int task_ID);
 	void save_task();
 	void load_task();
+	vector<string> split( string& line, char delimiter);
+
 
 };
 

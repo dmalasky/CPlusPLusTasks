@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 
+
 using namespace std;
 
 int Task::next_ID = 0;
@@ -19,7 +20,7 @@ int main()
     while (!done) {
 
         // Menu
-        cout << "Welcome to Task in C++!\n" << endl;
+        cout << "\nWelcome to Task in C++!\n" << endl;
         cout << "Please select one of the following" << endl;
         cout << "1. Add task" << endl;
         cout << "2. Display tasks" << endl;
@@ -47,6 +48,7 @@ int main()
             taskManager.display_tasks();
             break;
         }
+        // Remove Tasks
         case 3:
         {
             cout << "Select Task by ID to remove: " << endl;
@@ -61,12 +63,14 @@ int main()
             taskManager.remove_task(ID_to_remove);
             break;
         }
+        // Save Tasks
         case 4:
         {
             
             taskManager.save_task();
             break;
         }
+        // Load Tasks
         case 5:
         {
 

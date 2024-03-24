@@ -10,38 +10,51 @@ Task::Task() : task_name(" "), task_desc(" "), start_time(" "), end_time(" ")
 }
 
 
-// Create task
+// Create task with user input.
 void Task::create_task()
 {
-    
     task_name = " ";
     task_desc = " ";
     start_time = " ";
     end_time = " ";
     
     cout << "Enter Task Name: ";
-    cin >> task_name;
+    cin.ignore();
+    getline(cin, task_name);
     
     cout << "Enter Task description: ";
-    cin >> task_desc;
+    getline(cin, task_desc);
     
     cout << "Enter start time: ";
-    cin >> start_time;
+    getline(cin, start_time);
     
     cout << "Enter end time: ";
-    cin >> end_time;
+    getline(cin, end_time);
 
    
     task_ID = next_ID;
     next_ID++;
 }
 
+// Creates task function for loading tasks.
+void Task::create_task_from_file(int _task_ID, string _task_name, string _task_desc, string _start_time, string _end_time)
+{
+    task_ID = _task_ID;
+    task_name = _task_name;
+    task_desc = _task_desc;
+    start_time = _start_time;
+    end_time = _end_time;
+    
+}
+
+// Displays one task
 void Task::display_task()
 {
 
-    cout << "\n" << "Task ID: " << task_ID << "\n" << task_name << ": " << task_desc << "\n" << start_time << " - " << end_time << "\n" << endl;
+    cout << "\n" << "Task ID: " << task_ID << "\n" << task_name << ": " << task_desc << "\n" << start_time << " - " << end_time << endl;
 
 }
+
 
 int Task::get_task_ID()
 {

@@ -27,6 +27,7 @@ public:
     string get_end_time() const;
     string get_task_name() const;
     string get_task_desc() const;
+    void create_task_from_file(int _task_ID, string _task_name, string _task_desc, string _start_time, string _end_time);
    
    
     

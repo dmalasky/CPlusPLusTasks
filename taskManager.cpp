@@ -49,25 +49,31 @@ void TaskManager::save_task()
 
     if (outputFile.is_open()) { 
         for (Task task : tasks) {
-            outputFile << task.get_task_ID() << "~" << task.get_task_name() << "~" << task.get_task_desc() << "~" << task.get_start_time() << task.get_end_time() << endl;
+            outputFile << task.get_task_ID() << "~" << task.get_task_name() << "~" << task.get_task_desc() << "~" << task.get_start_time() << "~" << task.get_end_time() << endl;
         }
         outputFile.close(); 
-        cout << "Tasks saved to file." << std::endl;
+        cout << "Tasks saved to file." << endl;
     }
     else {
-        cerr << "Failed to open file for writing." << std::endl;
+        cerr << "Failed to open file for writing." << endl;
     }
 }
 
+
+// Load Tasks
 void TaskManager::load_task()
 {
+    Task task;
+    vector<string> parts;
 
    ifstream inputFile("saved_tasks.txt");
 
     if (inputFile.is_open()) { 
         string line;
         while (getline(inputFile, line)) { 
-            cout << "Line: " << line << std::endl; 
+            parts = split(line, '~');
+            task.create_task_from_file(stoi(parts[0]), parts[1], parts[2], parts[3], parts[4]);
+            tasks.push_back(task);
         }
         inputFile.close(); 
     }
@@ -76,9 +82,9 @@ void TaskManager::load_task()
     }
 }
 
+// Custom split function
 vector<string> TaskManager::split(string& line, char delimiter)
 {
-    
     vector<string> tokens;
     istringstream ss(line);
     string token;

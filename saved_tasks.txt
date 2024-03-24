@@ -1,2 +1,2 @@
-0~asdf~asdf~asdfasdf
-1~fasd~asdf~asdfasdf
+0~Shopping~Buy food for dinner~3:00pm~4:00pm
+1~Cook Dinner~We're Having tacos~5:00pm~6:00pm
